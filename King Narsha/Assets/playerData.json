@@ -1,0 +1,12 @@
+{
+    "name": "p2",
+    "time": 16,
+    "health": 20,
+    "mentality": 50,
+    "items": [
+        "postit",
+        "flashlight",
+        "key"
+    ],
+    "currentSceneName": "StudyRoom"
+}
