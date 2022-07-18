@@ -23,7 +23,7 @@ public class PopupManager : MonoBehaviour
             scanObject = scanObj;
             talkText.text = "이것의 이름은 " + scanObject.name + "입니다";
         }
-        talkPanel.setActive(isAction);
+        talkPanel.SetActive(isAction);
     }
 
 }

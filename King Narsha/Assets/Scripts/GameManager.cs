@@ -67,7 +67,7 @@ public class GameManager : MonoBehaviour
             scanObject = scanObj;
 
             // 스캔한 오브젝트의 id와 isNPC 정보를 가져와야 하기 때문에 objData script가 필요
-            ObjData objData = scanObject.GetComponent<objData>();
+            ObjData objData = scanObject.GetComponent<ObjData>();
             // objData의 id와 NPC인지 정보를 매개변수로 넘김
             Talk(objData.id, objData.isNPC);
 
