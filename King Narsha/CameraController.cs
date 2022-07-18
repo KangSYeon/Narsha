@@ -1,16 +1,12 @@
 using UnityEngine;
 using System.Collections;
+public class Control : MonoBehaviour {
+        // Update is called once per frame
+        int speed=10; //스피드 
+        void Update () {
+                float xMove=Input.GetAxis ("Horizontal")*speed*Time.deltaTime ; //x축으로 이동할 양
+                float yMove=Input.GetAxis ("Vertical")*speed*Time.deltaTime; //y축으로 이동할양
+                this.transform.Translate(new Vector3(xMove,yMove,0));  //이동
 
-public class CameraCtrl : MonoBehaviour
-{
-    public GameObject A;  //A라는 GameObject변수 선언
-    Transform AT;
-    void Start()
-    {
-        AT = A.transform;
-    }
-    void LateUpdate()
-    {
-        transform.position = new Vector3(AT.position.x, AT.position.y, transform.position.z);
-    }
+        }
 }
