@@ -21,14 +21,31 @@ public class TalkManager : MonoBehaviour
 
     void GenerateData()
     {
-        talkData.Add(1, new string[] { "æ»≥Á", "æ»≥Á??" });
+        talkData.Add(1, new string[] { "¿Ã∞« ≤…∫¥¿Ã¥Ÿ" });
+        talkData.Add(1000, new string[] { "æ»≥Á: 0", "æ»≥Á??: 1" });
 
-        // portraitData.Add(1000 + 0);
+
+        portraitData.Add(1000 + 0, porArr[0]);
+        portraitData.Add(1000 + 1, porArr[1]);
+        portraitData.Add(1000 + 2, porArr[2]);
+        portraitData.Add(1000 + 3, porArr[3]);
+        portraitData.Add(1000 + 4, porArr[4]);
+        portraitData.Add(1000 + 5, porArr[5]);
+
+
 
     }
 
     public string GetTalk(int id, int talkIndex)
     {
-        return talkData[id][talkIndex];
+        if (talkIndex == talkData[id].Length)
+            return null;
+        else
+            return talkData[id][talkIndex];
+    }
+
+    public Sprite GetPortrait(int id, int portraitIndex)
+    {
+        return portraitData[id + portraitIndex];
     }
 }

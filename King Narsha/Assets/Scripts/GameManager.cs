@@ -10,6 +10,19 @@ public class GameManager : MonoBehaviour
     public static GameManager GetInstance() { Init(); return Instance; }
     public GameState State;
 
+    public TalkManager talkManager;
+    public GameObject talkPanel;
+    public Text talkText;
+    public Image portraitImg;
+    public GameObject scanObject;
+    public bool isAction;
+    public int talkIndex;
+
+    public TextAsset txt;
+    string[,] Sentence;
+    int lineSize, rowSize;
+
+
     void Awake()
     {
         Instance = this; //������ ������ �� ���� �Ŵ��� �ҷ�����
@@ -43,17 +56,6 @@ public class GameManager : MonoBehaviour
 
 
 
-    public TalkManager talkManager;
-    public GameObject talkPanel;
-    public Text talkText;
-    public Image portraitImg;
-    public GameObject scanObject;
-    public bool isAction;
-    public int talkIndex;
-
-    public TextAsset txt;
-    string[,] Sentence;
-    int lineSize, rowSize;
 
     public void Action(GameObject scanObj)
     {
@@ -91,8 +93,9 @@ public class GameManager : MonoBehaviour
         // 입력받은 대사를 이용하여 출력
         if (isNPC)
         {
-            talkText.text = talkData;
+            talkText.text = talkData.Split(':')[0];
 
+            portraitImg.sprite = talkManager.GetPortrait(id, int.Parse(talkData.Split(':')[0]));
             portraitImg.color = new Color(1, 1, 1, 1);
         }
         else
