@@ -1,37 +1,38 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 7dd37c630e62a774fa336935454c0ebc
 TextureImporter:
   internalIDToNameTable:
   - first:
       213: -773063737236225195
-    second: "\uB9F5\uD0C0\uC77C \uCD08\uC548_0"
+    second: floor
   - first:
       213: -7341501068681674487
-    second: "\uB9F5\uD0C0\uC77C \uCD08\uC548_1"
+    second: TopLeft
   - first:
       213: 2739073168699824891
-    second: "\uB9F5\uD0C0\uC77C \uCD08\uC548_2"
+    second: TopMiddle
   - first:
       213: 6272366619895423927
-    second: "\uB9F5\uD0C0\uC77C \uCD08\uC548_3"
+    second: TopRight
   - first:
       213: -798015765327908689
-    second: "\uB9F5\uD0C0\uC77C \uCD08\uC548_4"
+    second: MiddleLeft
   - first:
       213: -5708015201582723404
     second: "\uB9F5\uD0C0\uC77C \uCD08\uC548_5"
   - first:
       213: 4848465732805660249
-    second: "\uB9F5\uD0C0\uC77C \uCD08\uC548_6"
+    second: MiddleRight
   - first:
       213: 7564099500860655446
-    second: "\uB9F5\uD0C0\uC77C \uCD08\uC548_7"
+    second: BottomLeft
   - first:
       213: -3836566642533431805
-    second: "\uB9F5\uD0C0\uC77C \uCD08\uC548_8"
+    second: BottomMiddle
   - first:
       213: -9133893582404930824
-    second: "\uB9F5\uD0C0\uC77C \uCD08\uC548_9"
+    second: BottomRight
   - first:
       213: -5346641201938038752
     second: "\uB9F5\uD0C0\uC77C \uCD08\uC548_10"
@@ -56,6 +57,11 @@ TextureImporter:
   - first:
       213: -5600278373396754821
     second: "\uB9F5\uD0C0\uC77C \uCD08\uC548_17"
+=======
+guid: 41f88b893bc289f4599aa38bfcf72f88
+TextureImporter:
+  internalIDToNameTable: []
+>>>>>>> 김영애
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -95,7 +101,11 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
+<<<<<<< HEAD
   spriteMode: 2
+=======
+  spriteMode: 1
+>>>>>>> 김영애
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -129,6 +139,7 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+<<<<<<< HEAD
   - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
@@ -145,7 +156,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "\uB9F5\uD0C0\uC77C \uCD08\uC548_0"
+      name: floor
       rect:
         serializedVersion: 2
         x: 0
@@ -166,13 +177,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\uB9F5\uD0C0\uC77C \uCD08\uC548_1"
+      name: TopLeft
       rect:
         serializedVersion: 2
-        x: 134
-        y: 133
-        width: 152
-        height: 153
+        x: 84
+        y: 252
+        width: 84
+        height: 84
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -186,6 +197,179 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: TopMiddle
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 252
+        width: 84
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfa1822e884230620800000000000000
+      internalID: 2739073168699824891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TopRight
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 252
+        width: 84
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b362e7553ceb0750800000000000000
+      internalID: 6272366619895423927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiddleLeft
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 168
+        width: 84
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa0f776b3e0ece4f0800000000000000
+      internalID: -798015765327908689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\uB9F5\uD0C0\uC77C \uCD08\uC548_5"
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 168
+        width: 84
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bec121aa6e09c0b0800000000000000
+      internalID: -5708015201582723404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiddleRight
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 168
+        width: 84
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95e098d45e5394340800000000000000
+      internalID: 4848465732805660249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BottomLeft
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 84
+        width: 84
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65742827b6419f860800000000000000
+      internalID: 7564099500860655446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BottomMiddle
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 84
+        width: 84
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3068ea237f6c1cac0800000000000000
+      internalID: -3836566642533431805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BottomRight
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 84
+        width: 84
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f2b8842e24ed3180800000000000000
+      internalID: -9133893582404930824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+=======
+  spriteSheet:
+    serializedVersion: 2
+    sprites: []
+>>>>>>> 김영애
     outline: []
     physicsShape: []
     bones: []
