@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,7 +6,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance; //Game ï¿½ï¿½ð¼­µï¿½ grab it ï¿½Ï±ï¿½ ï¿½ï¿½ï¿½ï¿½ instance ï¿½ï¿½ï¿½ï¿½ : static
+    public static GameManager Instance; //Game   ð¼­µ  grab it  Ï±       instance      : static
     public static GameManager GetInstance() { Init(); return Instance; }
     public GameState State;
 
@@ -26,33 +25,14 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
-        Instance = this; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Å´ï¿½ï¿½ï¿½ ï¿½Ò·ï¿½ï¿½ï¿½ï¿½ï¿½
-=======
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class GameManager : MonoBehaviour
-{
-    public static GameManager Instance; //Game ¾îµð¼­µç grab it ÇÏ±â À§ÇØ instance »ý¼º : static
-    public static GameManager GetInstance() { Init(); return Instance; }
-    public GameState State;
-
-    void Awake()
-    {
-        Instance = this; //°ÔÀÓÀ» ½ÃÀÛÇÒ ¶§ °ÔÀÓ ¸Å´ÏÀú ºÒ·¯¿À±â
->>>>>>> origin/ë¯¼ì§€ë‹˜-Merge
+        Instance = this; //                       Å´     Ò·     
     }
 
     public void UpdateGameState(GameState newState)
     {
         State = newState;
 
-<<<<<<< HEAD
-        //switch -> tab -> ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ -> tab ï¿½ï¿½ case ï¿½Úµï¿½ï¿½Ï¼ï¿½
-=======
-        //switch -> tab -> º¯¼ö¸í -> tab ½Ã case ÀÚµ¿¿Ï¼º
->>>>>>> origin/ë¯¼ì§€ë‹˜-Merge
+        //switch -> tab ->        -> tab    case  Úµ  Ï¼ 
         /*switch (newState)
         {
         }*/
@@ -75,9 +55,8 @@ public class GameManager : MonoBehaviour
     }
 
 
-<<<<<<< HEAD
 
-
+    // ëŒ€í™”ì°½ í™œì„±í™” ê´€ë ¨ í•¨ìˆ˜
     public void Action(GameObject scanObj)
     {
         if (isAction)   // ì‹¤í–‰ ì¤‘ì´ ì•„ë‹ ë•Œ ëŒ€í™”ì°½ ì—†ì• ê¸°
@@ -104,7 +83,7 @@ public class GameManager : MonoBehaviour
         // talkMangerì— ìƒì„±í•œ ëŒ€ì‚¬ë¥¼ ë°˜í™˜í•˜ëŠ” í•¨ìˆ˜ë¥¼ ì´ìš©í•˜ì—¬ ëŒ€ì‚¬ í•œ ì¤„ì„ ìž…ë ¥ë°›ìŒ
         string talkData = talkManager.GetTalk(id, talkIndex);
 
-        if(talkData == null)
+        if (talkData == null)
         {
             isAction = false;
             talkIndex = 0;
@@ -113,7 +92,7 @@ public class GameManager : MonoBehaviour
 
         // ìž…ë ¥ë°›ì€ ëŒ€ì‚¬ë¥¼ ì´ìš©í•˜ì—¬ ì¶œë ¥
         if (isNPC)
-        {
+        {   // ëŒ€ì‚¬ê°€ ì—¬ëŸ¬ ê°œì¼ ê²½ìš° ':'ì„ ê¸°ì¤€ìœ¼ë¡œ ëŒ€ì‚¬ë¥¼ ë‚˜ëˆ”
             talkText.text = talkData.Split(':')[0];
 
             portraitImg.sprite = talkManager.GetPortrait(id, int.Parse(talkData.Split(':')[0]));
@@ -122,7 +101,7 @@ public class GameManager : MonoBehaviour
         else
         {
             talkText.text = talkData;
-            // NPCê°€ ì•„ë‹ ê²½ìš° ì•ˆ ë³´ì´ë„ë¡ ìƒ‰ ì¡°ì •
+            // NPCê°€ ì•„ë‹ ê²½ìš° ì´ˆìƒí™”ê°€ ì•ˆ ë³´ì´ë„ë¡ ìƒ‰ ì¡°ì •
             portraitImg.color = new Color(1, 1, 1, 0);
         }
 
@@ -144,31 +123,22 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < lineSize; i++)
         {
             string[] row = line[i].Split('\t');
-            for(int j=0; j<rowSize; j++)
+            for (int j = 0; j < rowSize; j++)
             {
                 Sentence[i, j] = row[j];
             }
         }
     }
 
-=======
->>>>>>> origin/ë¯¼ì§€ë‹˜-Merge
+
+
 }
 
 public enum GameState
 {
-<<<<<<< HEAD
-    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Â¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½Ò¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ ï¿½Ë´Ï´ï¿½. (enum)
-    //Example, ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ó¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Â°ï¿½ ï¿½Ö½ï¿½ï¿½Ï´ï¿½. ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Madnessï¿½ï¿½ ï¿½Ï°Ú½ï¿½ï¿½Ï´ï¿½. ï¿½Æ·ï¿½ï¿½ï¿½ Exampleï¿½Ô´Ï´ï¿½.
-=======
-    //°ÔÀÓÀÇ »óÅÂ¸¦ °áÁ¤ÇÏ´Â ¸ðµç ¿ä¼Ò¸¦ ³ª¿­ÇÏ¸é µË´Ï´Ù. (enum)
-    //Example, ÀúÈñ °ÔÀÓ¿¡´Â ±¤±â¶ó´Â »óÅÂ°¡ ÀÖ½À´Ï´Ù. ±¤±âÀÇ º¯¼ö¸íÀº Madness·Î ÇÏ°Ú½À´Ï´Ù. ¾Æ·¡´Â ExampleÀÔ´Ï´Ù.
->>>>>>> origin/ë¯¼ì§€ë‹˜-Merge
+    //          Â¸       Ï´        Ò¸       Ï¸   Ë´Ï´ . (enum)
+    //Example,         Ó¿              Â°   Ö½  Ï´ .                 Madness    Ï°Ú½  Ï´ .  Æ·    Example Ô´Ï´ .
     //Madness,
     //NormalGame,
     //ErrorGame
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/ë¯¼ì§€ë‹˜-Merge
