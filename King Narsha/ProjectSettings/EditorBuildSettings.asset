@@ -8,4 +8,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/StudyRoom/Scece_LSY.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/scene CMJ.unity
+    guid: bd60b3991dcdb9c46a91b0c4cb5fb2b3
+  - enabled: 1
+    path: Assets/Scenes/scene CMJ test.unity
+    guid: 985884985bfbbf94f9130991572cf572
+  - enabled: 1
+    path: Assets/Scenes/Select CMJ.unity
+    guid: d146a6324ee5dd847b74d255fee86172
   m_configObjects: {}
