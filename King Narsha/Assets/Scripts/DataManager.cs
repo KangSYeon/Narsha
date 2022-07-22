@@ -6,9 +6,10 @@ using System.IO;
 public class PlayerData //초기값 미설정
 {
     public string name;
-    public int time; //시간
-    public int health; //체력
-    public int mentality; //정신력
+    public int Day; //날짜
+    public int Hour; //시간
+    public int HP; //체력
+    public int MT; //정신력
     public string[] items; //소지한 아이템들
     public string currentSceneName; //위치한 씬
 }
