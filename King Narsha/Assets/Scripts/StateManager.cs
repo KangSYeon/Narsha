@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 //====수정해야 할 사항들====
 //저장된 플레이어 데이터(HP, MT 불러오기)
-//HP, MT게이지 fillAmount함수 오류나는 이유 찾기
-//(다들 이미지.fillAmount = 현재HP/ 최대HP로 하면 잘만 실행된다는데 어째서..)
 //씬 이동후에도 유지되도록 해야함
 //날짜 표기하는 Text를 시계에서 잘보이게 UI에서 변경하기
 
@@ -29,8 +27,6 @@ public class StateManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        HPGauge = GetComponent<Image>();
-        MTGauge = GetComponent<Image>();
 
         if (true) //저장된 데이터가 없다면
         {
@@ -76,7 +72,7 @@ public class StateManager : MonoBehaviour
            HPtext.text = string.Format("{0}/{1}", HP, maxHP); // 현재체력/최대체력 표시
         }
 
-        //HPGauge.fillAmount = HP / maxHP; 
+        HPGauge.fillAmount = HP / maxHP; 
     }
 
     public void Change_MT(float _value)
@@ -103,7 +99,7 @@ public class StateManager : MonoBehaviour
             }
            MTtext.text = string.Format("{0}/{1}", MT, maxMT); // 현재정신력/최대정신력 표시
         }
-        //MTGauge.fillAmount = MT / maxMT;
+        MTGauge.fillAmount = MT / maxMT;
     }
 }
 
