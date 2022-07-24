@@ -92,10 +92,10 @@ public class GameManager : MonoBehaviour
 
         // 입력받은 대사를 이용하여 출력
         if (isNPC)
-        {   // 대사가 여러 개일 경우 ':'을 기준으로 대사를 나눔
+        {   // 대사가 여러 개일 경우 구분자 ':'을 기준으로 배열로 대사를 나눔
             talkText.text = talkData.Split(':')[0];
 
-            portraitImg.sprite = talkManager.GetPortrait(id, int.Parse(talkData.Split(':')[0]));
+            portraitImg.sprite = talkManager.GetPortrait(id, int.Parse(talkData.Split(':')[1]));
             portraitImg.color = new Color(1, 1, 1, 1);
         }
         else

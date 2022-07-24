@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
+// 대화창 팝업 관련 스크립트
 public class PopupManager : MonoBehaviour
 {
     public GameObject talkPanel;
