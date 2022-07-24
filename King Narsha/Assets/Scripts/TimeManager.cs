@@ -41,14 +41,16 @@ public class TimeManager : MonoBehaviour
         if (timeActive)
         {
             timeElapsed += UnityEngine.Time.deltaTime; //초단위의 시간을 저장. 델타타임으로 프레임마다 시간증가
-            hour = timeElapsed / timeTohour; //게임시간의 단위로 변환
+            hour = timeElapsed / timeTohour; //게임시간의 단위로 변환            
+            day = 1 + hour / 24; //게임상의 날짜
 
-            
-            day = hour / 24; //게임상의 날짜
+            float textDay = Mathf.Floor(day); //소수점아래 버림
+            float texthour = Mathf.Floor(hour); //소수점아래 버림
 
             ClockMove();
 
-            timeText.text = "DAY : " + day.ToString("0") + "\nHOUR : " + hour.ToString("0"); //한자리수만 표시  
+            timeText.text = "DAY : " + textDay.ToString("0") + "\nHOUR : " + texthour.ToString("0"); //한자리수만 표시  
+            Debug.Log(hour);
         }
     }
 

@@ -24,6 +24,11 @@ public class StateManager : MonoBehaviour
     public static float MT; //현재 정신력
     public Text MTtext;//현재 정신력을 표시하는 text
 
+    public float _speed = 255f;//광기이벤트때 깜빡이는 정도
+    public Image MadnessImage; //광기이벤트때 깜빡일 이미지
+    private Color color;
+    private WaitForSeconds waitTime = new WaitForSeconds(0.05f);
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,12 +43,16 @@ public class StateManager : MonoBehaviour
 
         Set_HP(HP);
         Set_MT(MT);
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (MT == 0)
+        {
+            Madness();
+        }
     }
 
 
@@ -100,6 +109,37 @@ public class StateManager : MonoBehaviour
            MTtext.text = string.Format("{0}/{1}", MT, maxMT); // 현재정신력/최대정신력 표시
         }
         MTGauge.fillAmount = MT / maxMT;
+    }
+
+    public void Madness()
+    {
+        float MadTime = 60f;
+
+        if (MadTime > 0)
+        {
+            MadTime -= UnityEngine.Time.deltaTime;
+            StartCoroutine(MadnessEvent(_speed));
+        }
+        if (MadTime <= 0)
+        {
+            HP = 0;
+            Set_HP(0);
+        }
+    }
+    IEnumerator MadnessEvent(float _speed)
+    {
+        while(color.a < 1f)
+        {
+            color.a += _speed;
+            MadnessImage.color = color;
+            yield return waitTime;
+        }
+        while(color.a >0f)
+        {
+            color.a -= _speed;
+            MadnessImage.color = color;
+            yield return waitTime;
+        }
     }
 }
 

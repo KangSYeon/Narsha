@@ -66,5 +66,4 @@ public class DataManager : MonoBehaviour
         nowSlot = -1;
         nowPlayer = new PlayerData();
     }
-
 }

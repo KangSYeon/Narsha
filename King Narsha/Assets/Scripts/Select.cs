@@ -16,6 +16,8 @@ public class Select : MonoBehaviour
 
     bool[] savefile = new bool[3]; //슬롯에 세이브파일이 존재하는지 여부
 
+    private FadeManager theFade;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +37,8 @@ public class Select : MonoBehaviour
             }
         }
         DataManager.instance.DataClear();//불러온 데이터 클리어
+
+        theFade = FindObjectOfType<FadeManager>();
     }
 
     // Update is called once per frame
@@ -70,8 +74,20 @@ public class Select : MonoBehaviour
             DataManager.instance.nowPlayer.name = newPlayerName.text; //입력한 이름을 받아와서 nowPlayer이름에 적용
             DataManager.instance.SaveData(); //데이터 저장
         }
-       
 
-        SceneManager.LoadScene(1); // 게임씬 숫자입력
+        StartCoroutine(TransferCoroutine());         
     }
+
+    IEnumerator TransferCoroutine()
+    {
+        theFade.FadeOut();//fadeout
+
+        yield return new WaitForSeconds(1f); //fadeout이후 대기
+
+        SceneManager.LoadScene(1); // 게임씬 숫자입력, 게임씬으로 이동
+       
+        theFade.FadeIn();//fadein
+    }
+
+
 }
