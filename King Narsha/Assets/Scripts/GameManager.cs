@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance;
+    public static GameManager Instance; //Game   𼭵  grab it  ϱ       instance      : static
     public static GameManager GetInstance() { Init(); return Instance; }
     public GameState State;
 
@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     public GameObject talkPanel;
     public Text talkText;
     public Image portraitImg;
-    public GameObject scanObject; //Why do we need to use public in scan Obj?
+    public GameObject scanObject;
     public bool isAction;
     public int talkIndex;
 
@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
-        Instance = this;
+        Instance = this; //                       Ŵ     ҷ     
     }
 
     public void UpdateGameState(GameState newState)
@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour
 
 
 
-
+    // 대화창 활성화 관련 함수
     public void Action(GameObject scanObj)
     {
         if (isAction)   // 실행 중이 아닐 때 대화창 없애기
@@ -92,16 +92,16 @@ public class GameManager : MonoBehaviour
 
         // 입력받은 대사를 이용하여 출력
         if (isNPC)
-        {
+        {   // 대사가 여러 개일 경우 구분자 ':'을 기준으로 배열로 대사를 나눔
             talkText.text = talkData.Split(':')[0];
 
-            portraitImg.sprite = talkManager.GetPortrait(id, int.Parse(talkData.Split(':')[0]));
+            portraitImg.sprite = talkManager.GetPortrait(id, int.Parse(talkData.Split(':')[1]));
             portraitImg.color = new Color(1, 1, 1, 1);
         }
         else
         {
             talkText.text = talkData;
-            // NPC가 아닐 경우 안 보이도록 색 조정
+            // NPC가 아닐 경우 초상화가 안 보이도록 색 조정
             portraitImg.color = new Color(1, 1, 1, 0);
         }
 
@@ -130,9 +130,15 @@ public class GameManager : MonoBehaviour
         }
     }
 
+
+
 }
 
 public enum GameState
 {
-
+    //          ¸       ϴ        Ҹ       ϸ   ˴ϴ . (enum)
+    //Example,         ӿ              °   ֽ  ϴ .                 Madness    ϰڽ  ϴ .  Ʒ    Example Դϴ .
+    //Madness,
+    //NormalGame,
+    //ErrorGame
 }
