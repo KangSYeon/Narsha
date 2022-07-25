@@ -10,13 +10,14 @@ public class StartPoint : MonoBehaviour
 {
     public string startPoint; //맵 이동시. 플레이어가 시작될 위치
     public GameObject thePlayer;
-    private DataManager PlayerData;
+    //private DataManager PlayerData;
 
     // Start is called before the first frame update
     void Start()
     {
+        
         //thePlayer = FindObjectOfType<MovingObject>(); //플레이어 스크립트가 따로없어서 public으로 오브젝트 가져옴
-
+       
 
         /*if (startPoint == PlayerData.currentSceneName)
         {

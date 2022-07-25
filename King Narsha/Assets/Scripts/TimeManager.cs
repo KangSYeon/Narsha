@@ -12,8 +12,10 @@ public class TimeManager : MonoBehaviour
     float timeElapsed = 0;
     float day = 1; //게임시간의 날짜 ,1일부터 시작
     float hour = 0; //게임시간의 시간단위
-   
- 
+
+    //DataManager dataManager;
+    //[SerializeField] GameObject theData;
+
 
     int timeTohour = 30; // 현실시간(30초)과 게임시간(1시간)의 배율
 
@@ -25,7 +27,7 @@ public class TimeManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       
+        //dataManager = theData.GetComponent<DataManager>();
     }
 
     // Update is called once per frame
@@ -50,7 +52,7 @@ public class TimeManager : MonoBehaviour
             ClockMove();
 
             timeText.text = "DAY : " + textDay.ToString("0") + "\nHOUR : " + texthour.ToString("0"); //한자리수만 표시  
-            Debug.Log(hour);
+            //Debug.Log(hour);
         }
     }
 
@@ -64,5 +66,17 @@ public class TimeManager : MonoBehaviour
     {
         ShortClock.transform.Rotate(0, 0, -UnityEngine.Time.deltaTime); //델타타임 * 30 / timeTohour
         LongClock.transform.Rotate(0, 0, -UnityEngine.Time.deltaTime * 12f); //델타타임 * 360 / timeTohour
+    }
+
+    public void SaveTime() //시간 저장데이터값 변경
+    {
+        DataManager.instance.nowPlayer.Day = day;
+        DataManager.instance.nowPlayer.Hour = hour;
+    }
+
+    public void LoadTime() //시간 데이터저장값 가져오기
+    {
+        day = DataManager.instance.nowPlayer.Day;
+        hour = DataManager.instance.nowPlayer.Hour;
     }
 }

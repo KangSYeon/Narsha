@@ -4,8 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 //맵이동을 씬전환으로 일단 구현해둠
-//현재 문제점 : 씬이 바뀌면서 fadein함수 로그만 출력되고 효과가 안나타남 
-//맵이동을 좌표이동으로 바꿔 해결
+
+//맵이동을 좌표이동으로 바꿔야함
 
 
 public class TransferMap: MonoBehaviour
