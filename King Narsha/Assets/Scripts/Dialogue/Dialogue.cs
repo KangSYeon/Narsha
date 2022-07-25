@@ -7,7 +7,7 @@ using UnityEngine;
 public class Dialogue
 {
     [Tooltip("대사 번호")]
-    public string[] dialoguenum;
+    public string[] dialogueNum;
 
     [Tooltip("발화자")]
     public string name;
@@ -16,21 +16,24 @@ public class Dialogue
     public string[] contexts;
 
     [Tooltip("이벤트 번호")]
-    public string[] number;
+    public string[] eventNum;
 
     [Tooltip("초상화 번호")]
-    public string[] portraitnum;
+    public string[] portraitNum;
+
+    [Tooltip("좌표")]
+    public string[] position;
 
     [Tooltip("조건")]
-    public string[] skipnum;
+    public string[] skipNum;
 
     [Tooltip("팝업창 번호")]
-    public string[] popnum;
+    public string[] popNum;
 
 }
 
 [System.Serializable]
-public class DialgoueEvent
+public class DialogueEvent
 {
 
     //이벤트 이름
