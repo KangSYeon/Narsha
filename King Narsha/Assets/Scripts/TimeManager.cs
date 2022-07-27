@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//세이브로드하고 바로 스타트타임하면 시간이 이상해지는 듯..
 
 public class TimeManager : MonoBehaviour
 {
@@ -13,9 +14,6 @@ public class TimeManager : MonoBehaviour
     float day = 1; //게임시간의 날짜 ,1일부터 시작
     float hour = 0; //게임시간의 시간단위
 
-    //DataManager dataManager;
-    //[SerializeField] GameObject theData;
-
 
     int timeTohour = 30; // 현실시간(30초)과 게임시간(1시간)의 배율
 
@@ -24,17 +22,18 @@ public class TimeManager : MonoBehaviour
     public GameObject ShortClock;
     public GameObject LongClock;
 
+
+
     // Start is called before the first frame update
     void Start()
     {
-        //dataManager = theData.GetComponent<DataManager>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        StartTime();
-        
+        StartTime();      
     }
     
     void StartTime()
@@ -52,7 +51,7 @@ public class TimeManager : MonoBehaviour
             ClockMove();
 
             timeText.text = "DAY : " + textDay.ToString("0") + "\nHOUR : " + texthour.ToString("0"); //한자리수만 표시  
-            //Debug.Log(hour);
+            Debug.Log(hour);
         }
     }
 
@@ -78,5 +77,18 @@ public class TimeManager : MonoBehaviour
     {
         day = DataManager.instance.nowPlayer.Day;
         hour = DataManager.instance.nowPlayer.Hour;
+
+        SetClock();
+    }
+
+    public void SetClock()
+    {
+        ShortClock.transform.Rotate(0, 0, DataManager.instance.nowPlayer.Hour* timeTohour);
+        LongClock.transform.Rotate(0, 0, DataManager.instance.nowPlayer.Hour * timeTohour*12f);
+
+        float textDay = Mathf.Floor(day); //소수점아래 버림
+        float texthour = Mathf.Floor(hour); //소수점아래 버림
+
+        timeText.text = "DAY : " + textDay.ToString("0") + "\nHOUR : " + texthour.ToString("0"); //한자리수만 표시
     }
 }

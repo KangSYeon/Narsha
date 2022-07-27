@@ -976,8 +976,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad0f70a50bc3aba409b3e5ea6c237050, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transferMapName: scene CMJ test
+  transferMapName: room1
   thePlayer: {fileID: 1786970275}
+  target: {fileID: 1434743625}
 --- !u!4 &576365405
 Transform:
   m_ObjectHideFlags: 0
@@ -986,7 +987,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 576365402}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 5, z: 0}
+  m_LocalPosition: {x: 0, y: 5.41, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1096,7 +1097,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 630071973}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.8, y: 1.3530406, z: 0.56401545}
+  m_LocalPosition: {x: -1, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1786970279}
@@ -1396,6 +1397,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   path: 
   nowSlot: 0
+  currentMapName: 
 --- !u!224 &746022348
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2406,7 +2408,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7c7dceadf1d5fb4899312e45b99b686, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startPoint: scene CMJ test
+  startPoint: room1
   thePlayer: {fileID: 1786970275}
 --- !u!61 &1434743627
 BoxCollider2D:
@@ -2442,7 +2444,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1434743625}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -2, z: 0}
+  m_LocalPosition: {x: 4.68, y: 5.43, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3118,7 +3120,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1636007622}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -386, y: -230.5, z: 1}
+  m_LocalPosition: {x: -378.29, y: -232.02, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1721344959}
@@ -5753,10 +5755,10 @@ BoxCollider2D:
   m_Offset: {x: 0.5104357, y: 1.3484645}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.47, y: 1.44}
+    newSize: {x: 0.47, y: 1.44}
+    adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
@@ -5771,7 +5773,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1786970275}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -383.16, y: -233.84, z: 0}
+  m_LocalPosition: {x: -377.41, y: -231.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 630071974}
