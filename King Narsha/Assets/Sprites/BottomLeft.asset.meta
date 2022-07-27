@@ -1,8 +1,15 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:King Narsha/Assets/Sprites/Animation/walk front.anim.meta
+guid: 8b524930eb1b63143bdbfd40d5eebe74
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+========
 guid: ea7b43a9535eae246b51bd096a86d7b8
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 11400000
+>>>>>>>> 강승연:King Narsha/Assets/Sprites/BottomLeft.asset.meta
   userData: 
   assetBundleName: 
   assetBundleVariant: 
