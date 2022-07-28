@@ -51,7 +51,7 @@ public class TimeManager : MonoBehaviour
             ClockMove();
 
             timeText.text = "DAY : " + textDay.ToString("0") + "\nHOUR : " + texthour.ToString("0"); //한자리수만 표시  
-            Debug.Log(hour);
+            //Debug.Log(hour);
         }
     }
 
