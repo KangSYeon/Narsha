@@ -3,50 +3,65 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-//맵이동을 씬전환으로 일단 구현해둠
-
-//맵이동을 좌표이동으로 바꿔야함
+//StartPoint의 위치로 플레이어 이동.
 
 
-public class TransferMap: MonoBehaviour
+public class TransferMap : MonoBehaviour
 {
     public string transferMapName; //이동할 맵의 이름
 
-    public GameObject thePlayer; 
+    public GameObject thePlayer;
+    public GameObject theBase;
 
     private FadeManager theFade;
-    private DataManager PlayerData;
 
+    public GameObject target;
+
+    //private CameraManager theCamera;
 
     // Start is called before the first frame update
     void Start()
     {
-        //thePlayer = FindObjectType<MovingObject>();
-        theFade = FindObjectOfType<FadeManager>();        
+
+        theFade = FindObjectOfType<FadeManager>();
+
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Player")
+        if (collision.tag == "Player")
         {
-            //PlayerData.currentSceneName = transferMapName;
+            DataManager.instance.currentMapName = transferMapName;
+
             StartCoroutine(TransferCoroutine());
+            //Debug.Log("TransferMap");
+            Debug.Log(target.transform.position.x);
+            Debug.Log(target.transform.position.y);
+            Debug.Log(target.transform.position.z);
         }
-        Debug.Log(PlayerData);
     }
 
-    
 
 
-    IEnumerator TransferCoroutine() 
+
+    IEnumerator TransferCoroutine()
     {
         theFade.FadeOut();//fadeout
 
         yield return new WaitForSeconds(1f); //fadeout이후 대기
 
+        thePlayer.transform.position = new Vector3(target.transform.position.x, target.transform.position.y, target.transform.position.z);
+        theBase.transform.position = new Vector3(target.transform.position.x, target.transform.position.y, target.transform.position.z);
+        Debug.Log("TransferMap");
+        Debug.Log("thePlayerposition : " + thePlayer.transform.position.x + "," + thePlayer.transform.position.y);
 
-        //SceneManager.LoadScene(transferMapName); //씬이동 명령어, 좌표이동으로 변경후 삭제
 
         theFade.FadeIn();//fadein
+    }
+
+    public void SaveMapName()
+    {
+        //DataManager.instance.PlayerMapName = nowMapName; //현재 플레이어의 맵이름 저장
     }
 }

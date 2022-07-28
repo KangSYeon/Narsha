@@ -37,4 +37,6 @@ public class DatabaseManager : MonoBehaviour
         }
         return dialogueList.ToArray();
     }
+
+    public List<Item> itemList = new List<Item>();
 }
