@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
+// 초상화 목록 생성
+// 대사 목록 생성
 public class TalkManager : MonoBehaviour
 {
     Dictionary<int, string[]> talkData;
@@ -22,7 +23,10 @@ public class TalkManager : MonoBehaviour
     void GenerateData()
     {
         talkData.Add(1, new string[] { "이건 꽃병이다" });
-        talkData.Add(1000, new string[] { "안녕: 0", "안녕??: 1" });
+        talkData.Add(2, new string[] { "오브젝트다" });
+
+        talkData.Add(1000, new string[] { "안녕: 0", "나는 NPC야: 1" });
+        talkData.Add(1001, new string[] { "오늘은 맑음: 0" });
 
 
         portraitData.Add(1000 + 0, porArr[0]);
@@ -31,8 +35,6 @@ public class TalkManager : MonoBehaviour
         portraitData.Add(1000 + 3, porArr[3]);
         portraitData.Add(1000 + 4, porArr[4]);
         portraitData.Add(1000 + 5, porArr[5]);
-
-
 
     }
 

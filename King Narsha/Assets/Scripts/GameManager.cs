@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance; //Game   𼭵  grab it  ϱ       instance      : static
+    public static GameManager Instance; //Game 어디서든 grab it 하기 위해 instance 생성 : static    : static
     public static GameManager GetInstance() { Init(); return Instance; }
     public GameState State;
 
@@ -25,14 +25,14 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
-        Instance = this; //                       Ŵ     ҷ     
+        Instance = this; //게임을 시작할 때 게임 매니저 불러오기
     }
 
     public void UpdateGameState(GameState newState)
     {
         State = newState;
 
-        //switch -> tab ->        -> tab    case  ڵ  ϼ 
+        //switch -> tab -> 변수명 -> tab 시 case 자동완성
         /*switch (newState)
         {
         }*/
@@ -72,10 +72,10 @@ public class GameManager : MonoBehaviour
             ObjData objData = scanObject.GetComponent<ObjData>();
             // objData의 id와 NPC인지 정보를 매개변수로 넘김
             Talk(objData.id, objData.isNPC);
+        }
+            talkPanel.SetActive(isAction);  // 대화창 활성화 상태에 따라 대화창 활성화 변경
 
         }
-        talkPanel.SetActive(isAction);  // 대화창 활성화 상태에 따라 대화창 활성화 변경
-    }
 
     // 실제 대사들을 UI에 출력하는 함수
     void Talk(int id, bool isNPC)
@@ -92,9 +92,10 @@ public class GameManager : MonoBehaviour
 
         // 입력받은 대사를 이용하여 출력
         if (isNPC)
-        {   // 대사가 여러 개일 경우 구분자 ':'을 기준으로 배열로 대사를 나눔
+        {  
+            // 구분자로 문장을 나눠줌
+            // 0: 대사 1:portraitIndex
             talkText.text = talkData.Split(':')[0];
-
             portraitImg.sprite = talkManager.GetPortrait(id, int.Parse(talkData.Split(':')[1]));
             portraitImg.color = new Color(1, 1, 1, 1);
         }
@@ -131,14 +132,14 @@ public class GameManager : MonoBehaviour
     }
 
 
-
 }
 
 public enum GameState
 {
-    //          ¸       ϴ        Ҹ       ϸ   ˴ϴ . (enum)
-    //Example,         ӿ              °   ֽ  ϴ .                 Madness    ϰڽ  ϴ .  Ʒ    Example Դϴ .
+    //게임의 상태를 결정하는 모든 요소를 나열하면 됩니다. (enum)
+    //Example, 저희 게임에는 광기라는 상태가 있습니다. 광기의 변수명은 Madness로 하겠습니다. 아래는 Example입니다.
     //Madness,
     //NormalGame,
     //ErrorGame
 }
+

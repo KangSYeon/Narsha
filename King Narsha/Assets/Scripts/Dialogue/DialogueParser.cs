@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class DialogueParser : MonoBehaviour
 {
+
     public Dialogue[] Parse(string _CSVFileName)
     {
         List<Dialogue> dialogueList = new List<Dialogue>(); // 대사 리스트 생성
@@ -34,20 +36,18 @@ public class DialogueParser : MonoBehaviour
             {
                 contextList.Add(col[2]);    // 대사 
                 EventList.Add(col[3]);  // 이벤트번호 
-                portraitList.Add(col[4]);  
+                portraitList.Add(col[4]);
                 positionList.Add(col[5]);
                 SkipList.Add(col[6]);
-                popList.Add(col[7]);
+                //popList.Add(col[7]);
 
 
                 // 한 행을 한 줄씩 콘솔창에 보여주기
-                Debug.Log(col[2]);
+                Debug.Log(col[3]);
 
                 if (++i < data.Length) // i가 미리 증가한 상태에서 비교해준다 dataLentg보다 작다면
                 {
                     col = data[i].Split(new char[] { ',' });
-
-
                 }
                 else
                 {
@@ -67,13 +67,19 @@ public class DialogueParser : MonoBehaviour
 
 
             dialogueList.Add(dialogue);
+
+
         }
         // 배열 형태로 반환
         return dialogueList.ToArray();
+
+
+
     }
 
     void Start()
     {
         Parse("MyText");
     }
+
 }
