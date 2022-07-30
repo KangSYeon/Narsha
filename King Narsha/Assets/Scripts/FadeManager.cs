@@ -8,7 +8,7 @@ public class FadeManager : MonoBehaviour //fadeout->fadein
     [SerializeField]
     [Range(0.01f, 10f)]
     private float fadeTime;  // fadeSpeed 값이 10이면 1초(값이 클수록 빠름)
-    public Image image; //검은 바탕 이미지
+    private Image image; //검은 바탕 이미지
 
     private void Start()
     {
@@ -38,14 +38,14 @@ public class FadeManager : MonoBehaviour //fadeout->fadein
 
     public void FadeIn()
     {
-        StopAllCoroutines(); //이전에 실행중이던 코루틴 무시 
+        //StopAllCoroutines(); //이전에 실행중이던 코루틴 무시 
         StartCoroutine(Fade(1, 0)); //검은 배경의 알파값이 0에서 1으로(화면이 점점 밝아짐) , fadein
         Debug.Log("fadein");
     }
 
     public void FadeOut()
     {
-        StopAllCoroutines(); //이전에 실행중이던 코루틴 무시 
+        //StopAllCoroutines(); //이전에 실행중이던 코루틴 무시 
         StartCoroutine(Fade(0, 1)); //검은 배경의 알파값이 0에서 1으로(화면이 점점 어두워짐) , fadeout
         Debug.Log("fadeout");
     }

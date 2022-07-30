@@ -11,6 +11,17 @@ public class Item
     public string itemDescription; //아이템 설명
     public int itemCount;//소지한 아이템 갯수
     public Sprite itemIcon; //아이템의 아이콘
+    //public ItemType ItemType;//아이템 타입
+
+    /*
+    public enum ItemType
+    {
+        Use,
+        Equip,
+        Quest,
+        ETC
+    }
+    */
 
     public Item(int _itemID, string _itemName, string _itemDes, int _itemCount = 1)//생성자
     {

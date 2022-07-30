@@ -11,57 +11,48 @@ public class TransferMap : MonoBehaviour
     public string transferMapName; //이동할 맵의 이름
 
     public GameObject thePlayer;
-    public GameObject theBase;
 
     private FadeManager theFade;
 
-    public GameObject target;
+    public GameObject target; //이동할위치
 
-    //private CameraManager theCamera;
+    //public CameraController theCamera;
 
     // Start is called before the first frame update
     void Start()
     {
-
         theFade = FindObjectOfType<FadeManager>();
-
-
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
+        if (collision.gameObject.name == "Player")
         {
-            DataManager.instance.currentMapName = transferMapName;
-
-            StartCoroutine(TransferCoroutine());
-            //Debug.Log("TransferMap");
-            Debug.Log(target.transform.position.x);
-            Debug.Log(target.transform.position.y);
-            Debug.Log(target.transform.position.z);
+            //StartCoroutine(TransferCoroutine());
+            thePlayer.transform.position = target.transform.position; //플레이어를 타켓의 위치로 이동
+            //theCamera.transform.position = new Vector3(target.transform.position.x, target.transform.position.y, theCamera.transform.position.z);
+            Debug.Log("TransferMap");
+            Debug.Log("thePlayerposition : " + thePlayer.transform.position.x + "," + thePlayer.transform.position.y);
         }
     }
-
-
-
-
     IEnumerator TransferCoroutine()
     {
-        theFade.FadeOut();//fadeout
+        DataManager.instance.currentMapName = transferMapName;
+        //theFade.FadeOut();//fadeout
 
         yield return new WaitForSeconds(1f); //fadeout이후 대기
 
-        thePlayer.transform.position = new Vector3(target.transform.position.x, target.transform.position.y, target.transform.position.z);
-        theBase.transform.position = new Vector3(target.transform.position.x, target.transform.position.y, target.transform.position.z);
+        thePlayer.transform.position = target.transform.position; //플레이어를 타켓의 위치로 이동
+
         Debug.Log("TransferMap");
         Debug.Log("thePlayerposition : " + thePlayer.transform.position.x + "," + thePlayer.transform.position.y);
 
-
-        theFade.FadeIn();//fadein
+        //theFade.FadeIn();//fadein
     }
 
     public void SaveMapName()
     {
         //DataManager.instance.PlayerMapName = nowMapName; //현재 플레이어의 맵이름 저장
     }
+
 }
