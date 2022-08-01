@@ -2199,6 +2199,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   path: 
   nowSlot: 0
+  currentMapName: 
 --- !u!224 &331287451
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2459,6 +2460,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeText: {fileID: 2044390327}
+  ShortClock: {fileID: 1261305058}
+  LongClock: {fileID: 1739357796}
 --- !u!4 &436674843
 Transform:
   m_ObjectHideFlags: 0
@@ -7909,6 +7912,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transferMapName: scene CMJ test
+  thePlayer: {fileID: 0}
+  theBase: {fileID: 0}
+  target: {fileID: 0}
 --- !u!1 &1261305058
 GameObject:
   m_ObjectHideFlags: 0
@@ -8869,15 +8875,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4a7aedd2b492c646b0bc7039824552e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  State: 0
-  talkManager: {fileID: 1986832050}
-  talkPanel: {fileID: 922854087}
-  talkText: {fileID: 1970106783}
-  portraitImg: {fileID: 602994831}
-  scanObject: {fileID: 0}
-  isAction: 0
-  talkIndex: 0
-  txt: {fileID: 0}
 --- !u!4 &1436846335
 Transform:
   m_ObjectHideFlags: 0
@@ -9307,8 +9304,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b09d27f600252346a7d4770fd87f6d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthGauge: {fileID: 1409624904}
-  mentalityGauge: {fileID: 1706937501}
+  HPGauge: {fileID: 0}
+  maxHP: 100
+  HPtext: {fileID: 0}
+  MTGauge: {fileID: 0}
+  maxMT: 100
+  MTtext: {fileID: 0}
+  madTime: 5
+  _speed: 255
+  MadnessImage: {fileID: 0}
 --- !u!1 &1512697395
 GameObject:
   m_ObjectHideFlags: 0
@@ -11492,8 +11496,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22dc1d1b3912a5e42a596d4fca7ec9d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  white: {fileID: 57944502}
-  black: {fileID: 2123659357}
+  fadeTime: 0
+  image: {fileID: 0}
 --- !u!1 &2044390326
 GameObject:
   m_ObjectHideFlags: 0

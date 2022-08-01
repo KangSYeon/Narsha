@@ -13,8 +13,8 @@ TagManager:
   - UI
   - 
   - fade
-  - background
-  - players
+  - 
+  - 
   - 
   - 
   - 
@@ -40,4 +40,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Floor
+    uniqueID: 3419996115
+    locked: 0
+  - name: Wall_Base
+    uniqueID: 3783942491
     locked: 0

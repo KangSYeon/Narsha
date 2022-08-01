@@ -3,19 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 
-//HP, MT, DAY, HOUR값 저장하고 불러오기 완료
-//select씬에서 넘어올때의 오류 해결해야함
+//플레이어 위치저장 추가해야함
 
 
 public class PlayerData 
 {
     public string name;
+
     public float Day = 1; //날짜
     public float Hour = 0 ; //시간
+
     public float HP = 100; //체력
     public float MT = 100; //정신력
+
     public string[] items; //소지한 아이템들
-    public string currentSceneName; //위치한 씬
+
+    public string PlayerMapName; //위치한 맵이름
+    public int PlayerXPosition;
+    public int PlayerYPosition;
+
 }
 
 
@@ -27,8 +33,7 @@ public class DataManager : MonoBehaviour
     public string path; //저장할 경로
     public int nowSlot;//현재 슬롯
 
-    //private StateManager stateManager;
-    //private TimeManager timeManager;
+    public string currentMapName; // transferMap 스크립트에 있는 transferMapName 변수의 값을 저장
 
     private void Awake()
     {
@@ -57,9 +62,6 @@ public class DataManager : MonoBehaviour
 
     public void SaveData()
     {
-        //stateManager.GetComponent<StateManager>().SaveState(); //상태저장
-        //timeManager.GetComponent<TimeManager>().SaveTime(); //시간저장
-
         string data = JsonUtility.ToJson(nowPlayer);
         File.WriteAllText(path+ nowSlot.ToString(), data); //경로+파일이름+슬롯이름 
     }
@@ -68,9 +70,6 @@ public class DataManager : MonoBehaviour
     {
         string data = File.ReadAllText(path + nowSlot.ToString()); //경로+파일이름+슬롯이름 
         nowPlayer = JsonUtility.FromJson<PlayerData>(data);
-
-        //stateManager.GetComponent<StateManager>().LoadState(); //상태불러오기 + UI변경
-        //timeManager.GetComponent<TimeManager>().SaveTime(); //시간불러오기 +UI변경
     }
 
     public void DataClear() //저장된 데이터가없을경우
@@ -84,11 +83,13 @@ public class DataManager : MonoBehaviour
         Debug.Log(path);
         Debug.Log("Day :" + nowPlayer.Day);
         Debug.Log("Hour :"+ nowPlayer.Hour);
+
         Debug.Log("HP :" + nowPlayer.HP);
         Debug.Log("MT :" + nowPlayer.MT);
         //Debug.Log("items :" + nowPlayer.items);
-        Debug.Log("currentSceneName :" + nowPlayer.currentSceneName);
-    }
+        Debug.Log("PlayerMapName :" + nowPlayer.PlayerMapName);
+        Debug.Log("currentMapName :" + currentMapName);
 
-    
+
+    }
 }

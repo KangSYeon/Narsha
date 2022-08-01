@@ -34,14 +34,10 @@ public class StateManager : MonoBehaviour
 
 
 
-
-    //DataManager dataManager;
-    //[SerializeField] GameObject theData;
-
     // Start is called before the first frame update
     void Start()
     {
-        //dataManager = theData.GetComponent<DataManager>();
+        
 
         if (true/*DataManager.instance.nowSlot == -1*/) //저장된 데이터가 없다면(현재 슬롯이 -1이라면)
         {
