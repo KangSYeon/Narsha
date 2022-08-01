@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class DialogueParser : MonoBehaviour
 {
-
     public Dialogue[] Parse(string _CSVFileName)
     {
         List<Dialogue> dialogueList = new List<Dialogue>(); // 대사 리스트 생성
